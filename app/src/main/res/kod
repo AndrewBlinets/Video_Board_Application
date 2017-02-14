@@ -1,0 +1,19 @@
+ @Override
+    protected void onCreate (Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        GifImageButton gib = new GifImageButton( this);
+        setContentView(gib);
+        gib.setImageResource(R.drawable.sample);
+        final MediaController mc = new MediaController(this);
+        mc.setMediaPlayer((GifDrawable)gib.getDrawable());
+        mc.setAnchorView(gib);
+        gib.setOnClickListener( new OnClickListener()
+        {
+            @Override
+            public void onClick ( View v )
+            {
+                mc.show();
+            }
+        } );
+    }

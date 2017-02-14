@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="color_fon">#FFFFFFFF</color>
+    <color name="mainBackground">#E2E2E2</color>
+
+    <!-- activity avtorization -->
+    <color name="av_registration">#3F51B5</color>
+
+    <!-- activity registration -->
+
+
 </resources>

@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">Video_Board</string>
+
+    <!-- activity avtorization -->
+    <string name="av_login">Логин</string>
+    <string name="av_password">Пароль</string>
+    <string name="av_registration">Регистрация</string>
+    <string name="av_enter">Войти</string>
+
+    <!-- activity registration -->
+    <string name="reg_label">Регистрация</string>
+    <string name="reg_registration_reg">Зарегистрироваться</string>
+
+    <!-- mainfragment -->
+    <string name="categore">Категории</string>
+
+    <!-- iteam -->
+    <string name="information">Information</string>
+
+    <!-- item information about user -->
+    <string name="name">ФИО</string>
+    <string name="Email">E-mail</string>
+    <string name="telephon_number">Телефонный номер</string>
+    <string name="country">Страна</string>
+    <string name="city">Город</string>
+    <string name="language">Язык</string>
+    <string name="password">Пароль</string>
+    <string name="password_double">Повтор</string>
+
+    <!-- activity settings -->
+    <string name="set_label">Настройки</string>
+    <string name="set_save_settings">Сохранить</string>
+
+    <!-- menu navigetion -->
+    <string name="advertisement_mn">Объявление</string>
+    <string name="advertisement_moderation_mn">Объявление на модерации</string>
+    <string name="add_mn">Добавить</string>
+    <string name="search_mn">Поиск</string>
+    <string name="settings_mn">Настройки</string>
+    <string name="exit_mn">Выход</string>
+
+    <!-- toolbars -->
+    <string name="search_title">Поиск объявлений</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
 </resources>
