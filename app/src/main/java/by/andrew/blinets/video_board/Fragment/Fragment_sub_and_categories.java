@@ -7,37 +7,34 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import by.andrew.blinets.video_board.R;
 
 /**
- * Created by Андрей on 13.02.2017.
+ * Created by Андрей on 16.02.2017.
  */
 
-public class Fragment_add extends Fragment {
+public class Fragment_sub_and_categories extends Fragment {
 
-    private static int LAYOUT = R.layout.fragment_add;
+    private static int LAYOUT = R.layout.mainfragment;
     private View view;
+    private boolean flag;
 
-    public Fragment_add() {
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    public static Fragment_add newInstance() {
-        Fragment_add fragment = new Fragment_add();
-        //Bundle args = new Bundle();
-        //fragment.setArguments(args);
-        return fragment;
+    public Fragment_sub_and_categories() {
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         view = inflater.inflate(LAYOUT,container,false);
+
+        flag = true;
+        if(flag)
+            ((TextView) view.findViewById(R.id.textView_mainfragment)).setText(R.string.categore);
+        else
+            ((TextView) view.findViewById(R.id.textView_mainfragment)).setText(R.string.subcategore);
         return view;
     }
 }

@@ -1,9 +1,12 @@
 package by.andrew.blinets.video_board;
 
 
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import by.andrew.blinets.video_board.Fragment.Fragment_add;
+import by.andrew.blinets.video_board.Fragment.Fragment_advretisement;
+import by.andrew.blinets.video_board.Fragment.Fragment_search;
+import by.andrew.blinets.video_board.Fragment.Fragment_settings;
+import by.andrew.blinets.video_board.Fragment.Fragment_sub_and_categories;
 
 /**
  * Created by Андрей on 10.02.2017.
@@ -45,6 +54,18 @@ public class Activity_main extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        Fragment fragment = null;
+
+        Class fragmentClass = Fragment_sub_and_categories.class;
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -69,15 +90,26 @@ public class Activity_main extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-              /*  if (id == R.id.action_settings) {
-                        return true;
-                }*/
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+        switch (item.getItemId())
+        {
+            case R.id.search_menu_toolbar:
+            {
+                fragmentClass = Fragment_search.class;
+                break;
+            }
+        }
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
         return super.onOptionsItemSelected(item);
     }
@@ -86,26 +118,62 @@ public class Activity_main extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        switch(id)
+
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+        switch(item.getItemId())
         {
-
+            case R.id.advertisement_menu_navigation:
+            {
+                fragmentClass = Fragment_advretisement.class;
+                break;
+            }
+            case R.id.advertisement_moderation_menu_navigation:
+            {
+                fragmentClass = Fragment_advretisement.class;
+                break;
+            }
+            case R.id.categoty_menu_navigation:
+            {
+                fragmentClass = Fragment_sub_and_categories.class;
+                break;
+            }
+            case R.id.add_menu_navigation:
+            {
+                fragmentClass = Fragment_add.class;
+                break;
+            }
+            case R.id.search_menu_navigation:
+            {
+                fragmentClass = Fragment_search.class;
+                break;
+            }
+            case R.id.settings_menu_navigation:
+            {
+                fragmentClass = Fragment_settings.class;
+                break;
+            }
+            case R.id.exit_menu_navigation:
+            {
+                finish();
+                break;
+            }
+            default:
+            {
+                fragmentClass = Fragment_sub_and_categories.class;
+                break;
+            }
         }
-               /* if (id == R.id.enter_menu_navigation) {
-                        navigationView.inflateMenu(R.menu.menu_navigation_authorized_user);
-                       // navigationView.
-                        // Handle the camera action
-                } else if (id == R.id.nav_gallery) {
-
-                } else if (id == R.id.nav_slideshow) {
-
-                } else if (id == R.id.nav_manage) {
-
-                } else if (id == R.id.nav_share) {
-
-                } else if (id == R.id.nav_send) {
-
-                }*/
+       if(fragmentClass != null) {
+           try {
+               fragment = (Fragment) fragmentClass.newInstance();
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+           FragmentManager fragmentManager = getSupportFragmentManager();
+           fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+       }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

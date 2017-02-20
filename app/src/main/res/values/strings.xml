@@ -2,9 +2,9 @@
     <string name="app_name">Video_Board</string>
 
     <!-- activity avtorization -->
-    <string name="av_login">Логин</string>
+    <string name="av_login">Email</string>
     <string name="av_password">Пароль</string>
-    <string name="av_registration">Регистрация</string>
+    <string name="av_registration"><u>Регистрация</u></string>
     <string name="av_enter">Войти</string>
 
     <!-- activity registration -->
@@ -13,6 +13,9 @@
 
     <!-- mainfragment -->
     <string name="categore">Категории</string>
+    <string name="subcategore">Подкатегории</string>
+    <string name="advretisement">Объявление</string>
+
 
     <!-- iteam -->
     <string name="information">Information</string>
@@ -33,7 +36,9 @@
 
     <!-- menu navigetion -->
     <string name="advertisement_mn">Объявление</string>
-    <string name="advertisement_moderation_mn">Объявление на модерации</string>
+    <string name="advertisement_moderation_mn">Hа модерации</string>
+    <string name="advertisement_post_mn">Размещенные</string>
+    <string name="categore_mn">Категории</string>
     <string name="add_mn">Добавить</string>
     <string name="search_mn">Поиск</string>
     <string name="settings_mn">Настройки</string>
@@ -45,6 +50,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="message">Что-то пошло не так!</string>
+    <string name="button_message">Попробывать еще раз.</string>
 
 
 </resources>

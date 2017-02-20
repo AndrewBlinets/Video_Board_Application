@@ -13,4 +13,7 @@
     <!-- activity registration -->
 
 
+
+    <color name="fon_is_not_online">#6f84fd</color>
+
 </resources>
