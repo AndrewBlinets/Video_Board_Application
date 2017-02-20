@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import by.andrew.blinets.video_board.R;
-import by.andrew.blinets.video_board.model.Advretisement;
+import by.andrew.blinets.video_board.dto.Advretisement;
 
 /**
  * Created by Андрей on 20.02.2017.

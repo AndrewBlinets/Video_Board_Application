@@ -43,8 +43,18 @@ public class Activity_main extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                try {
+                    fragmentManager.beginTransaction().replace(R.id.flContent,
+                             (Fragment_add.class).newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+
             }
         });
 
@@ -54,18 +64,17 @@ public class Activity_main extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        Fragment fragment = null;
-
-        Class fragmentClass = Fragment_sub_and_categories.class;
+        FragmentManager fragmentManager = getSupportFragmentManager();
         try {
-            fragment = (Fragment) fragmentClass.newInstance();
+            fragmentManager.beginTransaction().replace(R.id.flContent,
+                     (Fragment_sub_and_categories.class).newInstance()).commit();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 

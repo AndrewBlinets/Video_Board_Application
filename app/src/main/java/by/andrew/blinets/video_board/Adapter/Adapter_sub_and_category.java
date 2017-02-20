@@ -6,13 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import by.andrew.blinets.video_board.R;
-import by.andrew.blinets.video_board.model.Categories;
+import by.andrew.blinets.video_board.dto.Categories;
 
 /**
  * Created by Андрей on 13.02.2017.

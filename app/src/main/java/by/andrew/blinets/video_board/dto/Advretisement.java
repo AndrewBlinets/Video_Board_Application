@@ -1,4 +1,4 @@
-package by.andrew.blinets.video_board.model;
+package by.andrew.blinets.video_board.dto;
 
 import java.util.Date;
 

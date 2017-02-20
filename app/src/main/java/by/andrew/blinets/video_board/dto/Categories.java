@@ -1,4 +1,4 @@
-package by.andrew.blinets.video_board.model;
+package by.andrew.blinets.video_board.dto;
 
 /**
  * Created by Андрей on 17.02.2017.
