@@ -37,4 +37,5 @@ public class Fragment_sub_and_categories extends Fragment {
             ((TextView) view.findViewById(R.id.textView_mainfragment)).setText(R.string.subcategore);
         return view;
     }
+
 }
